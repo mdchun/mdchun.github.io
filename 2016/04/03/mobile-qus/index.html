@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://mdchun.github.io">
-  <title>Tag: Hexo | mdchun blog</title>
+  <title>移动端个人记录 | mdchun blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="mdchun blog">
-<meta property="og:url" content="http://mdchun.github.io/tags/Hexo/index.html">
+  <meta name="description" content="viewport 视口（可视区窗口）默认不设置viewport参数一般在移动端为980；width： 可视区宽度（number || device-width ）    number:安卓支持不是很好    device-width: 设备宽度user-scalable: 是否允许用户缩放，yes || no, 注： IOS10无效（坑）（通过事件处理）initial-scale: 初始缩放比例m">
+<meta name="keywords" content="mobile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端个人记录">
+<meta property="og:url" content="http://mdchun.github.io/2016/04/03/mobile-qus/index.html">
 <meta property="og:site_name" content="mdchun blog">
+<meta property="og:description" content="viewport 视口（可视区窗口）默认不设置viewport参数一般在移动端为980；width： 可视区宽度（number || device-width ）    number:安卓支持不是很好    device-width: 设备宽度user-scalable: 是否允许用户缩放，yes || no, 注： IOS10无效（坑）（通过事件处理）initial-scale: 初始缩放比例m">
+<meta property="og:updated_time" content="2017-07-03T15:32:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mdchun blog">
+<meta name="twitter:title" content="移动端个人记录">
+<meta name="twitter:description" content="viewport 视口（可视区窗口）默认不设置viewport参数一般在移动端为980；width： 可视区宽度（number || device-width ）    number:安卓支持不是很好    device-width: 设备宽度user-scalable: 是否允许用户缩放，yes || no, 注： IOS10无效（坑）（通过事件处理）initial-scale: 初始缩放比例m">
   
     <link rel="alternative" href="/atom.xml" title="mdchun blog" type="application/atom+xml">
   
@@ -143,60 +148,95 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mobile-qus" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/09/25/hello-world/" class="archive-article-date">
-  	<time datetime="2016-09-25T07:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/25/hello-world/">Hello Hexo Blog</a>
+    <h1 class="article-title" itemprop="name">
+      移动端个人记录
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016/04/03/mobile-qus/" class="archive-article-date">
+  	<time datetime="2016-04-03T15:25:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="viewport-视口（可视区窗口）"><a href="#viewport-视口（可视区窗口）" class="headerlink" title="viewport 视口（可视区窗口）"></a>viewport 视口（可视区窗口）</h3><p>默认不设置viewport参数一般在移动端为980；<br>width： 可视区宽度（number || device-width ）<br>    number:安卓支持不是很好<br>    device-width: 设备宽度<br>user-scalable: 是否允许用户缩放，yes || no, 注： IOS10无效（坑）（通过事件处理）<br>initial-scale: 初始缩放比例<br>minimum-scale: 最小缩放比例<br>maximum-scale: 最大缩放比例</p>
+<p>像素比：window.devicePixedRatio(只读):把一个像素放大到N个像素去显示</p>
+<h3 id="常用meta设置"><a href="#常用meta设置" class="headerlink" title="常用meta设置"></a>常用meta设置</h3><h3 id="移动端默认样式"><a href="#移动端默认样式" class="headerlink" title="移动端默认样式"></a>移动端默认样式</h3><p>清除点击阴影<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a, input, button&#123;</div><div class="line">    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>清除按钮圆角<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">input,button&#123;</div><div class="line">    -webkit-appearance: none;</div><div class="line">    border-radius: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>选中文字设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">    -webkit-user-select: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>禁止文字缩放<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body *&#123;</div><div class="line">    -webkit-text-size-adjust: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>默认字体设置,英文字体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">    font-family: Helvetica;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="移动端其他问题"><a href="#移动端其他问题" class="headerlink" title="移动端其他问题"></a>移动端其他问题</h3><p>Font Boosting<br>在一段文字我们没有给他设置高度的时候，在webkit内核下，文字大小被浏览器放大了（不是必现）<br>解决办法：<br>1.设置高度<br>2.设置最大高度，max-height</p>
+<p>Fix 固定定位，抖动</p>
+<p>IOS的body的overflow问题 </p>
+<h3 id="适配"><a href="#适配" class="headerlink" title="适配"></a>适配</h3><p>1.百分比适配</p>
+<p>2.viewport(动态设置缩放比例饿)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">    var w = window.screen.width; // 屏幕尺寸</div><div class="line">    var targetW = 320; // 目标尺寸(所有终端都是320尺寸)</div><div class="line">    var scale = w / targetW; // 当前尺寸/目标尺寸</div><div class="line">    var meta = document.createElement(&apos;meta&apos;);</div><div class="line">    meta.name = &apos;viewport&apos;;</div><div class="line">    meta.content = `user-scalable=no,initial-scale=$&#123;scale&#125;,minimum-scale=$&#123;scale&#125;,maximum-scale=$&#123;scale&#125;`;</div><div class="line">    document.head.appeldChild(meta);</div><div class="line">&#125;)()</div></pre></td></tr></table></figure></p>
+<p>3.rem适配</p>
+<p>4.弹性盒模型（box版和flex版）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mobile</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/09/25/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello Hexo Blog
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -219,9 +259,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
