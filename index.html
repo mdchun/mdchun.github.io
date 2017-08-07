@@ -145,6 +145,149 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-es8探索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/07/es8探索/">es8探索</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/07/es8探索/" class="archive-article-date">
+  	<time datetime="2017-08-07T12:13:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ES8-已经发布的一些主要的新特性🔥"><a href="#ES8-已经发布的一些主要的新特性🔥" class="headerlink" title="ES8 已经发布的一些主要的新特性🔥"></a>ES8 已经发布的一些主要的新特性🔥</h1><blockquote>
+<p>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="external">众成翻译</a><br>译者：<a href="http://www.zcfy.cc/@1992xiao" target="_blank" rel="external">我是搬运工</a><br>链接：<a href="http://www.zcfy.cc/article/3563" target="_blank" rel="external">http://www.zcfy.cc/article/3563</a><br>原文：<a href="https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66" target="_blank" rel="external">https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66</a></p>
+</blockquote>
+<p><img src="http://p0.qhimg.com/t01b29b40c78cc6a23f.png" alt=""></p>
+<p>EcmaScript 8 或者叫 EcmaScript 2017 在六月底被 TC39 组织正式发布。在去年，我们好像针对 EcmaScript 讨论了很多。目前的标准是一年发布一次新的版本。在 2015 年 ES6 发布，2016 年 ES7 发布，但有人记得 ES5 在哪一年发布的吗？是在 2009 年，在 JavaScript 崛起之前。</p>
+<p>所以我们追随作为一门稳定语言 avaScript 的发展，现在我们需要将 ES8 纳入我们的学习计划了。</p>
+<p>如果你内心强大（O(∩_∩)O哈哈~，深呼吸，阅读 <a href="https://www.ecma-international.org/ecma-262/8.0/index.html" target="_blank" rel="external">web</a>，<a href="https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" target="_blank" rel="external">pdf</a> 语言规格。那么对于其他人，本篇文章将会通过几个代码例子覆盖 ES8 新的主要的特性。</p>
+<hr>
+<h3 id="String-padding"><a href="#String-padding" class="headerlink" title="String padding"></a>String padding</h3><p>本部分为 String 对象增加了 2 个函数：padStart 和 padEnd</p>
+<p>像它们名字那样，这几个函数的主要目的就是填补字符串的首部和尾部，<strong>为了使得到的结果字符串的长度能达到给定的长度</strong>。你可以通过特定的字符，或者字符串，或者默认的空格填充它。下面是函数的声明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.padStart(targetLength [, padString])</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.padEnd(targetLength [, padString])</div></pre></td></tr></table></figure>
+<p>正如你所见，这些函数的第一个参数是 <code>targetLength</code>（目标长度），这个是结果字符串的长度。第二个参数是可选的 <code>padString</code>（填充字符），一个填充到源字符串的字符串。默认值是空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&apos;es8&apos;.padStart(2);          // &apos;es8&apos;</div><div class="line">&apos;es8&apos;.padStart(5);          // &apos;  es8&apos;</div><div class="line">&apos;es8&apos;.padStart(6, &apos;woof&apos;);  // &apos;wooes8&apos;</div><div class="line">&apos;es8&apos;.padStart(14, &apos;wow&apos;);  // &apos;wowwowwowwoes8&apos;</div><div class="line">&apos;es8&apos;.padStart(7, &apos;0&apos;);     // &apos;0000es8&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&apos;es8&apos;.padEnd(2);          // &apos;es8&apos;</div><div class="line">&apos;es8&apos;.padEnd(5);          // &apos;es8  &apos;</div><div class="line">&apos;es8&apos;.padEnd(6, &apos;woof&apos;);  // &apos;es8woo&apos;</div><div class="line">&apos;es8&apos;.padEnd(14, &apos;wow&apos;);  // &apos;es8wowwowwowwo&apos;</div><div class="line">&apos;es8&apos;.padEnd(7, &apos;6&apos;);     // &apos;es86666&apos;</div></pre></td></tr></table></figure>
+<p><img src="http://p0.qhimg.com/t01f8ff0369aba48d87.png" alt=""></p>
+<p>浏览器支持情况MDN)</p>
+<hr>
+<h3 id="Object-values-and-Object-entries"><a href="#Object-values-and-Object-entries" class="headerlink" title="Object.values and Object.entries"></a>Object.values and Object.entries</h3><p><code>Object.values</code> 方法返回一个给定对象自身可遍历属性的值的数组，遍历顺序和 <code>for in</code> 一样。函数的声明有点儿琐碎。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.values(obj)</div></pre></td></tr></table></figure>
+<p><code>_obj_</code> 参数是需要待操作的对象。可以是一个对象，或者一个数组（是一个带有数字下标的对象，[10,20,30] -&gt; {0: 10,1: 20,2: 30}).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const obj = &#123; x: &apos;xxx&apos;, y: 1 &#125;;</div><div class="line">Object.values(obj); // [&apos;xxx&apos;, 1]</div><div class="line"></div><div class="line">const obj = [&apos;e&apos;, &apos;s&apos;, &apos;8&apos;]; // same as &#123; 0: &apos;e&apos;, 1: &apos;s&apos;, 2: &apos;8&apos; &#125;;</div><div class="line">Object.values(obj); // [&apos;e&apos;, &apos;s&apos;, &apos;8&apos;]</div><div class="line"></div><div class="line">//  当我们使用数字键值时，返回的是数字排序</div><div class="line">// 根据键值排序</div><div class="line">const obj = &#123; 10: &apos;xxx&apos;, 1: &apos;yyy&apos;, 3: &apos;zzz&apos; &#125;;</div><div class="line">Object.values(obj); // [&apos;yyy&apos;, &apos;zzz&apos;, &apos;xxx&apos;]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`Object.values(&apos;es8&apos;); // [&apos;e&apos;, &apos;s&apos;, &apos;8&apos;]`</div></pre></td></tr></table></figure>
+<p><img src="http://p0.qhimg.com/t01c3d2ac4830947575.png" alt=""></p>
+<p>MDN 上 Object.values 的支持情况</p>
+<p><code>_Object.entries_</code> 方法返回一个给定对象自身可遍历属性 <code>[key, value]</code> 的数组， 排序规则和 <code>Object.values</code> 一样。这个方法的声明比较琐碎:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">const obj = &#123; x: &apos;xxx&apos;, y: 1 &#125;;</div><div class="line">Object.entries(obj); // [[&apos;x&apos;, &apos;xxx&apos;], [&apos;y&apos;, 1]]</div><div class="line"></div><div class="line">const obj = [&apos;e&apos;, &apos;s&apos;, &apos;8&apos;];</div><div class="line">Object.entries(obj); // [[&apos;0&apos;, &apos;e&apos;], [&apos;1&apos;, &apos;s&apos;], [&apos;2&apos;, &apos;8&apos;]]</div><div class="line"></div><div class="line">const obj = &#123; 10: &apos;xxx&apos;, 1: &apos;yyy&apos;, 3: &apos;zzz&apos; &#125;;</div><div class="line">Object.entries(obj); // [[&apos;1&apos;, &apos;yyy&apos;], [&apos;3&apos;, &apos;zzz&apos;], [&apos;10&apos;: &apos;xxx&apos;]]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`Object.entries(&apos;es8&apos;); // [[&apos;0&apos;, &apos;e&apos;], [&apos;1&apos;, &apos;s&apos;], [&apos;2&apos;, &apos;8&apos;]]`</div></pre></td></tr></table></figure>
+<p><img src="http://p0.qhimg.com/t015bd15a2761c39891.png" alt=""></p>
+<p>MDN 上 <em>Object.entries</em> 的支持情况</p>
+<hr>
+<h3 id="Object-getOwnPropertyDescriptors"><a href="#Object-getOwnPropertyDescriptors" class="headerlink" title="Object.getOwnPropertyDescriptors"></a>Object.getOwnPropertyDescriptors</h3><p><code>getOwnPropertyDescriptors</code> 方法返回指定对象所有自身属性的描述对象。属性描述对象是直接在对象上定义的，而不是继承于对象的原型。声明如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`Object.getOwnPropertyDescriptors(obj)`</div></pre></td></tr></table></figure>
+<p> <code>_obj_</code> 是待操作对象。返回的描述对象键值有： <code>_configurable</code>, <code>enumerable</code>, <code>writable</code>, <code>get</code>, <code>set</code> and <code>value</code>_。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">const obj = &#123; </div><div class="line">  get es7() &#123; return 777; &#125;,</div><div class="line">  get es8() &#123; return 888; &#125;</div><div class="line">&#125;;</div><div class="line">Object.getOwnPropertyDescriptor(obj);</div><div class="line">// &#123;</div><div class="line">//   es7: &#123;</div><div class="line">//     configurable: true,</div><div class="line">//     enumerable: true,</div><div class="line">//     get: function es7()&#123;&#125;, //the getter function</div><div class="line">//     set: undefined</div><div class="line">//   &#125;,</div><div class="line">//   es8: &#123;</div><div class="line">//     configurable: true,</div><div class="line">//     enumerable: true,</div><div class="line">//     get: function es8()&#123;&#125;, //the getter function</div><div class="line">//     set: undefined</div><div class="line">//   &#125;</div><div class="line">// &#125;</div></pre></td></tr></table></figure>
+<p>描述符的数据对 <a href="https://hackernoon.com/all-you-need-to-know-about-decorators-a-case-study-4a7e776b22a6" target="_blank" rel="external">advanced features like decorators</a> 非常重要。</p>
+<p><img src="http://p0.qhimg.com/t0171587f52ad63bc34.png" alt=""></p>
+<p>浏览器支持情况 (MDN)</p>
+<hr>
+<h3 id="函数参数和函数调用中的尾逗号"><a href="#函数参数和函数调用中的尾逗号" class="headerlink" title="函数参数和函数调用中的尾逗号"></a>函数参数和函数调用中的尾逗号</h3><p>当我们在函数参数列表后面加上不必要的逗号，函数参数中的尾逗号可以让编辑器不再抛出错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function es8(var1, var2, var3**,**) &#123;</div><div class="line">  // ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>像函数声明中的那样，也可以应用到函数的调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">es8(10, 20, 30**,**);</div></pre></td></tr></table></figure></p>
+<p>这个特性是从对象和数组的字面量的尾逗号中受到启发， <code>[10, 20, 30,]</code> 和 <code>{ x: 1, }</code>。</p>
+<hr>
+<h3 id="Async-函数"><a href="#Async-函数" class="headerlink" title="Async 函数"></a>Async 函数</h3><p><code>async function</code> 声明一个异步的函数，返回 <code>[AsyncFunction](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction &quot;The AsyncFunction constructor creates a new async function object. In JavaScript every asynchronous function is actually an AsyncFunction object.&quot;)</code> 对象。在内部，异步函数工作和生成器一样。但他们没有被翻译为生成器函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fetchTextByPromise() &#123;</div><div class="line">  return new Promise(resolve =&gt; &#123; </div><div class="line">    setTimeout(() =&gt; &#123; </div><div class="line">      resolve(&quot;es8&quot;);</div><div class="line">    &#125;, 2000);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">**async** function sayHello() &#123; </div><div class="line">  const externalFetchedText = **await** fetchTextByPromise();</div><div class="line">  console.log(`Hello, $&#123;externalFetchedText&#125;`); // Hello, es8</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`sayHello();`</div></pre></td></tr></table></figure>
+<p>调用 <code>sayHello</code> 将会在 2s 后打印 <code>Hello, es8</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">console.log(1);</div><div class="line">sayHello();</div><div class="line">console.log(2);</div></pre></td></tr></table></figure>
+<p>现在打印如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 // immediately</div><div class="line">2 // immediately</div><div class="line">Hello, es8 // after 2 seconds</div></pre></td></tr></table></figure>
+<p>这是因为异步函数调用不会阻塞主进程。</p>
+<p>注意： 一个 <code>asnyc function</code> 总是返回一个 promise ，并且 awit 关键字只能用于 标有 <code>async</code> 函数的内部。</p>
+<p><img src="http://p0.qhimg.com/t012c63da219d669fdb.png" alt=""></p>
+<p>浏览器支持情况(MDN)</p>
+<hr>
+<h3 id="共享内存和原子"><a href="#共享内存和原子" class="headerlink" title="共享内存和原子"></a>共享内存和原子</h3><p>当共享内存时，多个进程可以在内存中读写数据。原子操作保证了可预测的数据被读写，在下一个操作开始之前，之前所有操作都结束了 及操作不会被打断。这部分介绍一个新的构造函数 <code>SharedArrayBuffer</code> 和一个有静态方法的命名空间对象 <code>Atomics</code>。 </p>
+<p><code>Atomic</code> 是一个和 <code>math</code> 一样有静态方法的对象，因此我们用它作为一个构造器。 这个对象里的静态方法如下：</p>
+<ul>
+<li><p>add / sub— add / subtract a value for the value at a specific position</p>
+</li>
+<li><p>and / or / xor — bitwise and / bitwise or / bitwise xor</p>
+</li>
+<li><p>load — 得到指定位置的值</p>
+</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t01837de0a039510781.png" alt=""></p>
+<p>浏览器支持情况 (MDN)</p>
+<hr>
+<h3 id="明年的-ES9-版本中-—-取消文字模板限制"><a href="#明年的-ES9-版本中-—-取消文字模板限制" class="headerlink" title="明年的 ES9 版本中 — 取消文字模板限制"></a>明年的 ES9 版本中 — 取消文字模板限制</h3><p>通过 ES6 中提供的模板标签，我们可以解析一个函数以声明一个模板，并且根据我们的逻辑返回一个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const esth = 8;</div><div class="line">helper`ES $&#123;esth&#125; is `;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function helper(strs, ...keys) &#123;</div><div class="line">  const str1 = strs[0]; // ES</div><div class="line">  const str2 = strs[1]; // is</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  let additionalPart = &apos;&apos;;</div><div class="line">  if (keys[0] == 8) &#123; // 8</div><div class="line">    additionalPart = &apos;awesome&apos;;</div><div class="line">  &#125;</div><div class="line">  else &#123;</div><div class="line">    additionalPart = &apos;good&apos;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return `$&#123;str1&#125; $&#123;keys[0]&#125; $&#123;str2&#125; $&#123;additionalPart&#125;.`;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>返回的值将是 → ES 8 is awesome。</p>
+<p>如果 <code>esth</code> 是7， 那么将会返回 → ES 7 is good。</p>
+<p>但是这里有一个限制，就是模板中包含列如 \u 或者 \x 下标的字符串， ES9 将会解决这个问题。 在这个地方 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank" rel="external">MDN website</a> or in the <a href="https://tc39.github.io/proposal-template-literal-revision/" target="_blank" rel="external">TC39 document</a> 可以获取更多的信息。</p>
+<p><img src="http://p0.qhimg.com/t01fe9ce8a08617a6b7.png" alt=""></p>
+<p>浏览器支持情况(MDN)</p>
+<hr>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>JavaScript 虽然已经用于开发实践，但是经常更新。从新的特性到规格的过程是安排的，和平衡的，这些新特性被 TC39 委员会确认，被一些核心的开发人员实现。这些新特性大多数已经是 TypeScript， 浏览器， 或者其他一些补丁的一部分了， 因此你可以现在就尝试这些新特性。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es8</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/07/es8探索/">没过瘾 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -495,7 +638,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mobile</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,7 +646,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">mobile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
             <div class="clearfix"></div>
