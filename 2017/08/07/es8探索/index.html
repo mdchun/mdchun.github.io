@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://mdchun.github.io">
   <title>es8探索 | mdchun blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ES8 已经发布的一些主要的新特性🔥 本文转载自：众成翻译译者：我是搬运工链接：http://www.zcfy.cc/article/3563原文：https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66   EcmaScript 8 或者叫 EcmaScript 2017 在六">
+  <meta name="description" content="ES8 已经发布了一些主要的新特性🔥 EcmaScript 8 或者叫 EcmaScript 2017 在六月底被 TC39 组织正式发布。在去年，我们好像针对 EcmaScript 讨论了很多。目前的标准是一年发布一次新的版本。在 2015 年 ES6 发布，2016 年 ES7 发布，但有人记得 ES5 在哪一年发布的吗？是在 2009 年，在 JavaScript 崛起之前。 所以我们追随">
 <meta name="keywords" content="es8,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es8探索">
 <meta property="og:url" content="http://mdchun.github.io/2017/08/07/es8探索/index.html">
 <meta property="og:site_name" content="mdchun blog">
-<meta property="og:description" content="ES8 已经发布的一些主要的新特性🔥 本文转载自：众成翻译译者：我是搬运工链接：http://www.zcfy.cc/article/3563原文：https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66   EcmaScript 8 或者叫 EcmaScript 2017 在六">
+<meta property="og:description" content="ES8 已经发布了一些主要的新特性🔥 EcmaScript 8 或者叫 EcmaScript 2017 在六月底被 TC39 组织正式发布。在去年，我们好像针对 EcmaScript 讨论了很多。目前的标准是一年发布一次新的版本。在 2015 年 ES6 发布，2016 年 ES7 发布，但有人记得 ES5 在哪一年发布的吗？是在 2009 年，在 JavaScript 崛起之前。 所以我们追随">
 <meta property="og:image" content="http://p0.qhimg.com/t01b29b40c78cc6a23f.png">
 <meta property="og:image" content="http://p0.qhimg.com/t01f8ff0369aba48d87.png">
 <meta property="og:image" content="http://p0.qhimg.com/t01c3d2ac4830947575.png">
@@ -23,10 +23,10 @@
 <meta property="og:image" content="http://p0.qhimg.com/t012c63da219d669fdb.png">
 <meta property="og:image" content="http://p0.qhimg.com/t01837de0a039510781.png">
 <meta property="og:image" content="http://p0.qhimg.com/t01fe9ce8a08617a6b7.png">
-<meta property="og:updated_time" content="2017-08-07T12:16:36.000Z">
+<meta property="og:updated_time" content="2017-08-07T12:31:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es8探索">
-<meta name="twitter:description" content="ES8 已经发布的一些主要的新特性🔥 本文转载自：众成翻译译者：我是搬运工链接：http://www.zcfy.cc/article/3563原文：https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66   EcmaScript 8 或者叫 EcmaScript 2017 在六">
+<meta name="twitter:description" content="ES8 已经发布了一些主要的新特性🔥 EcmaScript 8 或者叫 EcmaScript 2017 在六月底被 TC39 组织正式发布。在去年，我们好像针对 EcmaScript 讨论了很多。目前的标准是一年发布一次新的版本。在 2015 年 ES6 发布，2016 年 ES7 发布，但有人记得 ES5 在哪一年发布的吗？是在 2009 年，在 JavaScript 崛起之前。 所以我们追随">
 <meta name="twitter:image" content="http://p0.qhimg.com/t01b29b40c78cc6a23f.png">
   
     <link rel="alternative" href="/atom.xml" title="mdchun blog" type="application/atom+xml">
@@ -177,12 +177,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ES8-已经发布的一些主要的新特性🔥"><a href="#ES8-已经发布的一些主要的新特性🔥" class="headerlink" title="ES8 已经发布的一些主要的新特性🔥"></a>ES8 已经发布的一些主要的新特性🔥</h1><blockquote>
-<p>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="external">众成翻译</a><br>译者：<a href="http://www.zcfy.cc/@1992xiao" target="_blank" rel="external">我是搬运工</a><br>链接：<a href="http://www.zcfy.cc/article/3563" target="_blank" rel="external">http://www.zcfy.cc/article/3563</a><br>原文：<a href="https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66" target="_blank" rel="external">https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66</a></p>
-</blockquote>
-<p><img src="http://p0.qhimg.com/t01b29b40c78cc6a23f.png" alt=""></p>
+        <h1 id="ES8-已经发布了一些主要的新特性🔥"><a href="#ES8-已经发布了一些主要的新特性🔥" class="headerlink" title="ES8 已经发布了一些主要的新特性🔥"></a>ES8 已经发布了一些主要的新特性🔥</h1><p><img src="http://p0.qhimg.com/t01b29b40c78cc6a23f.png" alt=""></p>
 <p>EcmaScript 8 或者叫 EcmaScript 2017 在六月底被 TC39 组织正式发布。在去年，我们好像针对 EcmaScript 讨论了很多。目前的标准是一年发布一次新的版本。在 2015 年 ES6 发布，2016 年 ES7 发布，但有人记得 ES5 在哪一年发布的吗？是在 2009 年，在 JavaScript 崛起之前。</p>
-<p>所以我们追随作为一门稳定语言 avaScript 的发展，现在我们需要将 ES8 纳入我们的学习计划了。</p>
+<p>所以我们追随作为一门稳定语言 JavaScript 的发展，现在我们需要将 ES8 纳入我们的学习计划了。</p>
 <p>如果你内心强大（O(∩_∩)O哈哈~，深呼吸，阅读 <a href="https://www.ecma-international.org/ecma-262/8.0/index.html" target="_blank" rel="external">web</a>，<a href="https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" target="_blank" rel="external">pdf</a> 语言规格。那么对于其他人，本篇文章将会通过几个代码例子覆盖 ES8 新的主要的特性。</p>
 <hr>
 <h3 id="String-padding"><a href="#String-padding" class="headerlink" title="String padding"></a>String padding</h3><p>本部分为 String 对象增加了 2 个函数：padStart 和 padEnd</p>
@@ -195,6 +192,7 @@
 <p><img src="http://p0.qhimg.com/t01f8ff0369aba48d87.png" alt=""></p>
 <p>浏览器支持情况MDN)</p>
 <hr>
+<a id="more"></a>
 <h3 id="Object-values-and-Object-entries"><a href="#Object-values-and-Object-entries" class="headerlink" title="Object.values and Object.entries"></a>Object.values and Object.entries</h3><p><code>Object.values</code> 方法返回一个给定对象自身可遍历属性的值的数组，遍历顺序和 <code>for in</code> 一样。函数的声明有点儿琐碎。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.values(obj)</div></pre></td></tr></table></figure>
 <p><code>_obj_</code> 参数是需要待操作的对象。可以是一个对象，或者一个数组（是一个带有数字下标的对象，[10,20,30] -&gt; {0: 10,1: 20,2: 30}).</p>
@@ -258,6 +256,9 @@
 <p>浏览器支持情况(MDN)</p>
 <hr>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>JavaScript 虽然已经用于开发实践，但是经常更新。从新的特性到规格的过程是安排的，和平衡的，这些新特性被 TC39 委员会确认，被一些核心的开发人员实现。这些新特性大多数已经是 TypeScript， 浏览器， 或者其他一些补丁的一部分了， 因此你可以现在就尝试这些新特性。</p>
+<blockquote>
+<p>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="external">众成翻译</a><br>译者：<a href="http://www.zcfy.cc/@1992xiao" target="_blank" rel="external">我是搬运工</a><br>链接：<a href="http://www.zcfy.cc/article/3563" target="_blank" rel="external">http://www.zcfy.cc/article/3563</a><br>原文：<a href="https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66" target="_blank" rel="external">https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66</a></p>
+</blockquote>
 
       
 
@@ -408,15 +409,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mobile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es8</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mobile</a>
               </li>
             
             <div class="clearfix"></div>
