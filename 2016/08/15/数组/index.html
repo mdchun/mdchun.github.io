@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://mdchun.github.io">
-  <title>Archives: 2016/8 | mdchun blog</title>
+  <title>数组 | mdchun blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="mdchun blog">
-<meta property="og:url" content="http://mdchun.github.io/archives/2016/08/index.html">
+  <meta name="description" content="javascript 数组方面的整理判断一个变量是不是数组(Boolean) es5 Array.isArray 1Array.isArray(arr)  调用 Object 对象原型的 toString 方法 ：Object.prototype.toString 1Object.prototype.toString.call(arr) === &amp;apos;[object Array]&amp;apos;">
+<meta name="keywords" content="javascript,es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://mdchun.github.io/2016/08/15/数组/index.html">
 <meta property="og:site_name" content="mdchun blog">
+<meta property="og:description" content="javascript 数组方面的整理判断一个变量是不是数组(Boolean) es5 Array.isArray 1Array.isArray(arr)  调用 Object 对象原型的 toString 方法 ：Object.prototype.toString 1Object.prototype.toString.call(arr) === &amp;apos;[object Array]&amp;apos;">
+<meta property="og:updated_time" content="2017-08-15T14:12:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mdchun blog">
+<meta name="twitter:title" content="数组">
+<meta name="twitter:description" content="javascript 数组方面的整理判断一个变量是不是数组(Boolean) es5 Array.isArray 1Array.isArray(arr)  调用 Object 对象原型的 toString 方法 ：Object.prototype.toString 1Object.prototype.toString.call(arr) === &amp;apos;[object Array]&amp;apos;">
   
     <link rel="alternative" href="/atom.xml" title="mdchun blog" type="application/atom+xml">
   
@@ -143,36 +148,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数组" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/15/数组/" class="archive-article-date">
-  	<time datetime="2016-08-15T13:41:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/15/数组/">数组</a>
+    <h1 class="article-title" itemprop="name">
+      数组
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016/08/15/数组/" class="archive-article-date">
+  	<time datetime="2016-08-15T13:41:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="javascript-数组方面的整理"><a href="#javascript-数组方面的整理" class="headerlink" title="javascript 数组方面的整理"></a>javascript 数组方面的整理</h1><h2 id="判断一个变量是不是数组-Boolean"><a href="#判断一个变量是不是数组-Boolean" class="headerlink" title="判断一个变量是不是数组(Boolean)"></a>判断一个变量是不是数组(Boolean)</h2><ul>
+<li><p>es5 Array.isArray</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Array.isArray(arr)</div></pre></td></tr></table></figure>
+</li>
+<li><p>调用 Object 对象原型的 toString 方法 ：Object.prototype.toString</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.toString.call(arr) === &apos;[object Array]&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>instanceof 运算符用于判断一个变量是否为一个对象的实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arr instanceof Array</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="类数组转化为数组"><a href="#类数组转化为数组" class="headerlink" title="类数组转化为数组"></a>类数组转化为数组</h2><ul>
+<li><p>es6 Array.from（字符串也可以转为数组）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Array.from(args)</div></pre></td></tr></table></figure>
+</li>
+<li><p>es6 对象扩展 （..rest）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let newArr = [...args];</div></pre></td></tr></table></figure>
+</li>
+<li><p>slice</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[].slice.call(args); // Array.prototype.slice.call(args)</div></pre></td></tr></table></figure>
+</li>
+<li><p>拷贝</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function copyArr(items)&#123;</div><div class="line">    const itemsCopy = [];</div><div class="line">    let i, len = items.length;</div><div class="line">    for (i = 0; i &lt; len; i++) &#123;</div><div class="line">        itemsCopy[i] = items[i];</div><div class="line">    &#125;</div><div class="line">    return itemsCopy;</div><div class="line">&#125;</div><div class="line">let newArr = copyArr(args)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>参数转为数组<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Array.of(...arguments);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h2><ul>
+<li>数组推导(允许现有数组生成新数组)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let arr = [1,2,3,4,5];</div><div class="line">let arr2 = [for(value of arr) value*2]</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,57 +223,47 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/02/git记录/" class="archive-article-date">
-  	<time datetime="2016-08-02T15:22:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-02</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/02/git记录/">git记录</a>
-    </h1>
+    <a href="/2017/08/07/es8探索/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          es8探索
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/02/git记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -261,8 +286,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
