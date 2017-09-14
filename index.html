@@ -173,9 +173,6 @@
 <li>Don’t save references to this. Use Function#bind.</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">function () &#123;</div><div class="line">  var _this = this;</div><div class="line">  return function () &#123;</div><div class="line">    console.log(_this);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">function () &#123;</div><div class="line">  return function () &#123;</div><div class="line">    console.log(this);</div><div class="line">  &#125;.bind(this);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>Don’t save references to this. Use Function#bind.</li>
-</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">var log = function (msg) &#123;</div><div class="line">  console.log(msg);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// good</div><div class="line">var log = function log(msg) &#123;</div><div class="line">  console.log(msg);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <ul>
 <li>If the property is a boolean, use isVal() or hasVal().</li>
@@ -187,13 +184,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function Jedi(options) &#123;</div><div class="line">  options || (options = &#123;&#125;);</div><div class="line">  var lightsaber = options.lightsaber || &apos;blue&apos;;</div><div class="line">  this.set(&apos;lightsaber&apos;, lightsaber);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Jedi.prototype.set = function set(key, val) &#123;</div><div class="line">  this[key] = val;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Jedi.prototype.get = function get(key) &#123;</div><div class="line">  return this[key];</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">// make() returns a new element</div><div class="line">// based on the passed in tag name</div><div class="line">//</div><div class="line">// @param &#123;String&#125; tag</div><div class="line">// @return &#123;Element&#125; element</div><div class="line">function make(tag) &#123;</div><div class="line"></div><div class="line">  // ...stuff...</div><div class="line"></div><div class="line">  return element;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// good</div><div class="line">/**</div><div class="line"> * make() returns a new element</div><div class="line"> * based on the passed in tag name</div><div class="line"> *</div><div class="line"> * @param &#123;String&#125; tag</div><div class="line"> * @return &#123;Element&#125; element</div><div class="line"> */</div><div class="line">function make(tag) &#123;</div><div class="line"></div><div class="line">  // ...stuff...</div><div class="line"></div><div class="line">  return element;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="Class-vs-React-createClass-vs-stateless"><a href="#Class-vs-React-createClass-vs-stateless" class="headerlink" title="Class vs React.createClass vs stateless"></a>Class vs React.createClass vs stateless</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">const Listing = React.createClass(&#123;</div><div class="line">  // ...</div><div class="line">  render() &#123;</div><div class="line">    return &lt;div&gt;&#123;this.state.hello&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// good</div><div class="line">class Listing extends React.Component &#123;</div><div class="line">  // ...</div><div class="line">  render() &#123;</div><div class="line">    return &lt;div&gt;&#123;this.state.hello&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">const Listing = React.createClass(&#123;</div><div class="line">  // ...</div><div class="line">  render() &#123;</div><div class="line">    return &lt;div&gt;&#123;this.state.hello&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// good</div><div class="line">class Listing extends React.Component &#123;</div><div class="line">  // ...</div><div class="line">  render() &#123;</div><div class="line">    return &lt;div&gt;&#123;this.state.hello&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>命名<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">import reservationCard from &apos;./ReservationCard&apos;;</div><div class="line"></div><div class="line">// good</div><div class="line">import ReservationCard from &apos;./ReservationCard&apos;;</div><div class="line"></div><div class="line">// bad</div><div class="line">const ReservationItem = &lt;ReservationCard /&gt;;</div><div class="line"></div><div class="line">// good</div><div class="line">const reservationItem = &lt;ReservationCard /&gt;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><p>命名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">import reservationCard from &apos;./ReservationCard&apos;;</div><div class="line"></div><div class="line">// good</div><div class="line">import ReservationCard from &apos;./ReservationCard&apos;;</div><div class="line"></div><div class="line">// bad</div><div class="line">const ReservationItem = &lt;ReservationCard /&gt;;</div><div class="line"></div><div class="line">// good</div><div class="line">const reservationItem = &lt;ReservationCard /&gt;;</div></pre></td></tr></table></figure>
-<ul>
+</li>
 <li><p>JSX</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">import reservationCard from &apos;./ReservationCard&apos;;</div><div class="line"></div><div class="line">// good</div><div class="line">import ReservationCard from &apos;./ReservationCard&apos;;</div><div class="line"></div><div class="line">// bad</div><div class="line">const ReservationItem = &lt;ReservationCard /&gt;;</div><div class="line"></div><div class="line">// good</div><div class="line">const reservationItem = &lt;ReservationCard /&gt;;</div></pre></td></tr></table></figure>
 </li>
@@ -302,11 +296,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es8</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es8</a>
         		</li>
       		
 		</ul>
@@ -746,19 +740,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mobile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es8</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,6 +753,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mobile</a>
               </li>
             
             <div class="clearfix"></div>
